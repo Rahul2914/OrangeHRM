@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-09-19T18:15:58 IST" name="OrangeHRM Regression" finished-at="2026-09-19T18:17:56 IST" duration-ms="118264">
+    <groups>
+      <group name="ui">
+        <method signature="EmployeeLifecycleE2ETest.shouldAuthenticateAdmin()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldAuthenticateAdmin" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+        <method signature="EmployeeLifecycleE2ETest.shouldCreateEmployee()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldCreateEmployee" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+        <method signature="EmployeeLifecycleE2ETest.shouldUpdateEmployee()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldUpdateEmployee" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+        <method signature="RoleBasedAccessTest.restrictedUserShouldNotSeeAdminOnlyModules()[pri:0, instance:com.orangehrm.assessment.tests.RoleBasedAccessTest@23e84203]" name="restrictedUserShouldNotSeeAdminOnlyModules" class="com.orangehrm.assessment.tests.RoleBasedAccessTest"/>
+      </group> <!-- ui -->
+      <group name="auth">
+        <method signature="EmployeeLifecycleE2ETest.shouldAuthenticateAdmin()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldAuthenticateAdmin" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+      </group> <!-- auth -->
+      <group name="regression">
+        <method signature="EmployeeLifecycleE2ETest.shouldAuthenticateAdmin()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldAuthenticateAdmin" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+        <method signature="EmployeeLifecycleE2ETest.shouldCreateEmployee()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldCreateEmployee" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+        <method signature="EmployeeLifecycleE2ETest.shouldUpdateEmployee()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldUpdateEmployee" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+        <method signature="EmployeeLifecycleE2ETest.shouldVerifyEmployeeThroughApi()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldVerifyEmployeeThroughApi" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+        <method signature="EmployeeLifecycleE2ETest.shouldDeleteEmployee()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldDeleteEmployee" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+        <method signature="RoleBasedAccessTest.restrictedUserShouldNotSeeAdminOnlyModules()[pri:0, instance:com.orangehrm.assessment.tests.RoleBasedAccessTest@23e84203]" name="restrictedUserShouldNotSeeAdminOnlyModules" class="com.orangehrm.assessment.tests.RoleBasedAccessTest"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="EmployeeLifecycleE2ETest.shouldAuthenticateAdmin()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldAuthenticateAdmin" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+        <method signature="EmployeeLifecycleE2ETest.shouldCreateEmployee()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldCreateEmployee" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+        <method signature="EmployeeLifecycleE2ETest.shouldUpdateEmployee()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldUpdateEmployee" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+        <method signature="EmployeeLifecycleE2ETest.shouldVerifyEmployeeThroughApi()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldVerifyEmployeeThroughApi" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+        <method signature="EmployeeLifecycleE2ETest.shouldDeleteEmployee()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldDeleteEmployee" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+      </group> <!-- smoke -->
+      <group name="api">
+        <method signature="EmployeeLifecycleE2ETest.shouldVerifyEmployeeThroughApi()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldVerifyEmployeeThroughApi" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+        <method signature="EmployeeLifecycleE2ETest.shouldDeleteEmployee()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" name="shouldDeleteEmployee" class="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest"/>
+      </group> <!-- api -->
+      <group name="role-based">
+        <method signature="RoleBasedAccessTest.restrictedUserShouldNotSeeAdminOnlyModules()[pri:0, instance:com.orangehrm.assessment.tests.RoleBasedAccessTest@23e84203]" name="restrictedUserShouldNotSeeAdminOnlyModules" class="com.orangehrm.assessment.tests.RoleBasedAccessTest"/>
+      </group> <!-- role-based -->
+    </groups>
+    <test started-at="2026-09-19T18:15:58 IST" name="Regression Coverage" finished-at="2026-09-19T18:17:56 IST" duration-ms="118264">
+      <class name="com.orangehrm.assessment.tests.RoleBasedAccessTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.orangehrm.assessment.tests.RoleBasedAccessTest@23e84203]" started-at="2026-09-19T18:15:58 IST" name="setUp" finished-at="2026-09-19T18:16:10 IST" duration-ms="11780" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="restrictedUserShouldNotSeeAdminOnlyModules()[pri:0, instance:com.orangehrm.assessment.tests.RoleBasedAccessTest@23e84203]" started-at="2026-09-19T18:16:10 IST" name="restrictedUserShouldNotSeeAdminOnlyModules" description="Part 1 - Role-based validation: an ESS user cannot reach admin-only modules" finished-at="2026-09-19T18:17:19 IST" duration-ms="69024" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- restrictedUserShouldNotSeeAdminOnlyModules -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.orangehrm.assessment.tests.RoleBasedAccessTest@23e84203]" started-at="2026-09-19T18:17:19 IST" name="tearDown" finished-at="2026-09-19T18:17:23 IST" duration-ms="3813" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.orangehrm.assessment.tests.RoleBasedAccessTest -->
+      <class name="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:15:58 IST" name="setUp" finished-at="2026-09-19T18:16:10 IST" duration-ms="11780" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="shouldAuthenticateAdmin()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:16:10 IST" name="shouldAuthenticateAdmin" description="Part 1 - Authentication: admin credentials reach the dashboard" finished-at="2026-09-19T18:16:25 IST" duration-ms="14895" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldAuthenticateAdmin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:16:25 IST" name="tearDown" finished-at="2026-09-19T18:16:26 IST" duration-ms="1214" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:16:26 IST" name="setUp" finished-at="2026-09-19T18:16:32 IST" duration-ms="5809" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="shouldCreateEmployee()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:16:32 IST" name="shouldCreateEmployee" description="Part 1 - Employee creation: a new PIM record is persisted" finished-at="2026-09-19T18:16:49 IST" depends-on-methods="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest.shouldAuthenticateAdmin" duration-ms="16587" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldCreateEmployee -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:16:49 IST" name="tearDown" finished-at="2026-09-19T18:16:56 IST" duration-ms="7392" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:16:56 IST" name="setUp" finished-at="2026-09-19T18:17:00 IST" duration-ms="3880" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="shouldUpdateEmployee()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:17:00 IST" name="shouldUpdateEmployee" description="Part 1 - Employee update: a Personal Details change survives a save and reload" finished-at="2026-09-19T18:17:16 IST" depends-on-methods="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest.shouldCreateEmployee" duration-ms="15781" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldUpdateEmployee -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:17:16 IST" name="tearDown" finished-at="2026-09-19T18:17:24 IST" duration-ms="8487" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:17:24 IST" name="setUp" finished-at="2026-09-19T18:17:28 IST" duration-ms="3897" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="shouldVerifyEmployeeThroughApi()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:17:28 IST" name="shouldVerifyEmployeeThroughApi" description="Part 1 - API verification: the API reflects the UI-created employee" finished-at="2026-09-19T18:17:38 IST" depends-on-methods="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest.shouldUpdateEmployee" duration-ms="9353" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldVerifyEmployeeThroughApi -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:17:38 IST" name="tearDown" finished-at="2026-09-19T18:17:45 IST" duration-ms="6970" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:17:45 IST" name="setUp" finished-at="2026-09-19T18:17:48 IST" duration-ms="3208" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="shouldDeleteEmployee()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:17:48 IST" name="shouldDeleteEmployee" description="Part 1 - Employee deletion: the record is removed and no longer retrievable" finished-at="2026-09-19T18:17:56 IST" depends-on-methods="com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest.shouldVerifyEmployeeThroughApi" duration-ms="8039" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldDeleteEmployee -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:17:56 IST" name="tearDown" finished-at="2026-09-19T18:17:56 IST" duration-ms="345" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="removeEmployeeIfDeletionStageWasSkipped()[pri:0, instance:com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest@4681c175]" started-at="2026-09-19T18:17:56 IST" name="removeEmployeeIfDeletionStageWasSkipped" finished-at="2026-09-19T18:17:56 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeEmployeeIfDeletionStageWasSkipped -->
+      </class> <!-- com.orangehrm.assessment.tests.EmployeeLifecycleE2ETest -->
+    </test> <!-- Regression Coverage -->
+  </suite> <!-- OrangeHRM Regression -->
+</testng-results>

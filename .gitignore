@@ -1,0 +1,20 @@
+# These patterns are anchored with a leading slash on purpose. An unanchored "artifacts/"
+# matches a directory of that name at ANY depth, which would also exclude report/artifacts/ -
+# the committed failure evidence. Git cannot re-include a file whose parent directory is
+# excluded, so a later "!report/**" would not rescue it and the deliverable would silently
+# go missing from the submission. Anchoring keeps the rules to the build output at the root.
+/target/
+/test-results/
+/artifacts/
+
+# allure-maven downloads the ~40 MB Allure commandline here on first report generation.
+# It is a redownloadable tool, not source, so it must never enter the repository.
+/.allure/
+
+.idea/
+.vscode/
+*.log
+
+# report/ is a tracked deliverable: the assessment asks for test reports and build artifacts
+# to be present in the repository, so the generated Allure report, the TestNG report and the
+# failure screenshots/videos live there rather than only in CI artifacts.

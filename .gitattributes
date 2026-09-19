@@ -1,0 +1,19 @@
+# Normalise text to LF in the repository. Without this, committing from Windows stores the
+# Maven wrapper shell script with CRLF endings, and the Ubuntu CI runner then fails with
+# "bad interpreter: /bin/sh^M" the moment it executes ./mvnw. The .cmd and .ps1 helpers are
+# pinned to CRLF because they are only ever run by Windows shells.
+* text=auto eol=lf
+
+mvnw text eol=lf
+*.sh text eol=lf
+
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Report evidence must never be line-ending converted.
+*.png binary
+*.jpg binary
+*.mp4 binary
+*.ico binary
+*.jar binary

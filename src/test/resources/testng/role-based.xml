@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!--
+  Intentionally sequential: this suite holds a single role-based access check. Cross-suite
+  parallelism is provided by the CI matrix; intra-suite parallelism lives in regression.xml.
+-->
+<suite name="OrangeHRM Role Based" parallel="false">
+    <test name="Role Based Access">
+        <groups>
+            <run>
+                <include name="role-based"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.orangehrm.assessment.tests.RoleBasedAccessTest"/>
+        </classes>
+    </test>
+</suite>

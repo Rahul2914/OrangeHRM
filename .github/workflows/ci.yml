@@ -1,0 +1,128 @@
+name: OrangeHRM QA Assessment
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+  workflow_dispatch:
+
+# The suite drives a shared public OrangeHRM tenant and creates real records on it. Letting two
+# pushes run at once would have them competing for the same data, producing failures that look
+# like product defects but are really self-inflicted interference. Superseded runs are cancelled
+# rather than queued, because a result for an older commit is not worth the runner time.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ui-api-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        suite:
+          - smoke
+          - role-based
+          - regression
+    env:
+      TEST_ENV: qa
+      UI_BASE_URL: ${{ secrets.UI_BASE_URL }}
+      API_BASE_URL: ${{ secrets.API_BASE_URL }}
+      ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+      ESS_USERNAME: ${{ secrets.ESS_USERNAME }}
+      ESS_PASSWORD: ${{ secrets.ESS_PASSWORD }}
+      EXECUTE_LIVE: true
+      VIDEO_ENABLED: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      # Chrome is needed because the suite drives a real browser. The matching driver is
+      # resolved at runtime by Selenium Manager, so no driver binary is committed or
+      # downloaded here, and the driver cannot drift out of step with the browser.
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      # The wrapper is used rather than the runner's pre-installed `mvn` so the build runs on the
+      # same pinned Maven version locally and in CI. Git does not preserve the execute bit on
+      # checkouts from Windows, so it is set explicitly instead of being assumed.
+      - name: Make Maven wrapper executable
+        run: chmod +x ./mvnw
+
+      # Dependencies are resolved before the test step so a dependency problem is reported
+      # as a dependency problem rather than as a test failure.
+      - name: Install dependencies
+        run: ./mvnw -B -ntp dependency:go-offline
+
+      - name: Run selected suite
+        run: ./mvnw -B -ntp clean test -Dsuite=src/test/resources/testng/${{ matrix.suite }}.xml
+
+      - name: Generate Allure report
+        if: always()
+        run: ./mvnw -B -ntp allure:report
+
+      # Surfaces the pass/fail counts on the run's summary page, so a reviewer sees the outcome
+      # without downloading an artifact or opening raw logs. TestNG writes the totals as
+      # attributes on the root element, so they are read from there rather than recounted.
+      - name: Publish result summary
+        if: always()
+        run: |
+          results="target/surefire-reports/testng-results.xml"
+          {
+            echo "## Suite: ${{ matrix.suite }}"
+            echo ""
+            if [ -f "$results" ]; then
+              header=$(head -c 2000 "$results" | tr '\n' ' ')
+              get() { echo "$header" | sed -n "s/.*[[:space:]]$1=\"\([0-9]*\)\".*/\1/p" | head -n1; }
+              echo "| Total | Passed | Failed | Skipped |"
+              echo "|---|---|---|---|"
+              echo "| $(get total) | $(get passed) | $(get failed) | $(get skipped) |"
+            else
+              echo "No TestNG results were produced - the run failed before tests started."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-${{ matrix.suite }}
+          path: target/allure-results
+          if-no-files-found: warn
+
+      - name: Upload Allure HTML
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-${{ matrix.suite }}
+          path: target/site/allure-maven-plugin
+          if-no-files-found: warn
+
+      - name: Upload failure evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-artifacts-${{ matrix.suite }}
+          path: artifacts
+          if-no-files-found: ignore
+
+      - name: Upload Surefire results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-results-${{ matrix.suite }}
+          path: target/surefire-reports
+          if-no-files-found: warn
